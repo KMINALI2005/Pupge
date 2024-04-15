@@ -15,6 +15,18 @@
     flex-direction: column;
     justify-content: center;
     height: 100vh;
+
+  .header {
+  position: absolute;
+  top: 10px; /* يمكنك تغيير هذا لتحديد المسافة من الأعلى */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(255, 255, 255, 0.5); /* لون الخلفية الشفاف */
+  padding: 10px 20px;
+  border-radius: 10px;
+  z-index: 10;
+}
+
   }
   .image-container {
     display: none;
@@ -38,6 +50,8 @@
 <body>
 
 <div class="container">
+  <div class="header">كمين & رصاصه</div>
+
 
   <div id="image1" class="image-container"><img src="iraq1.jpg" alt="صورة 1"></div>
   <div id="image2" class="image-container"><img src="iraq2.jpg" alt="صورة 2"></div>
