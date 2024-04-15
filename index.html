@@ -2,37 +2,62 @@
 <html lang="ar">
 <head>
 <meta charset="UTF-8">
-<title>مشغل موسيقى</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>معرض الصور مع الموسيقى</title>
 <style>
+  body {
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    background-color: #f7f7f7;
+    margin: 0;
+    padding: 0;
+  }
   .container {
     position: relative;
-    text-align: center;
+    top: 50%;
+    transform: translateY(-50%);
   }
-  .music-player {
-    position: absolute;
-    bottom: 0;
+  .image-container {
+    display: none;
+  }
+  .image-container.active {
+    display: block;
+  }
+  img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+  audio {
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* شفافية للخلفية */
-    color: white;
-    padding: 10px;
+    margin-top: 20px;
   }
 </style>
 </head>
 <body>
 
 <div class="container">
-  <!-- الصورة -->
-  <img src="OIG4.jpeg" alt="صورة" style="width:50%;">
-  <!-- مشغل الموسيقى -->
-  <div class="<audio autoplay>">
-    
-       <audio autoplay controls>
-        <source src="pupge.mp3" type="audio/mpeg">
- 
-      متصفحك لا يدعم عنصر الصوت.
-    </audio>
-  </div>
+  <div id="image1" class="image-container active"><img src="image1.jpg" alt="صورة 1"></div>
+  <div id="image2" class="image-container"><img src="image2.jpg" alt="صورة 2"></div>
+  <div id="image3" class="image-container"><img src="image3.jpg" alt="صورة 3"></div>
+  <div id="image4" class="image-container"><img src="image4.jpg" alt="صورة 4"></div>
+  <div id="image5" class="image-container"><img src="image5.jpg" alt="صورة 5"></div>
+  
+  <audio controls autoplay>
+    <source src="pupge.mp3" type="audio/mpeg">
+    متصفحك لا يدعم عنصر الصوت.
+  </audio>
 </div>
+
+<script>
+  let currentImage = 1;
+  document.body.addEventListener('click', function() {
+    document.getElementById('image' + currentImage).classList.remove('active');
+    currentImage = currentImage >= 5 ? 1 : currentImage + 1;
+    document.getElementById('image' + currentImage).classList.add('active');
+  });
+</script>
 
 </body>
 </html>
+
