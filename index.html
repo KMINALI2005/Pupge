@@ -11,34 +11,35 @@
     background-color: #f7f7f7;
     margin: 0;
     padding: 0;
-  }
-  .container {
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
   }
   .image-container {
     display: none;
+    margin: auto;
   }
   .image-container.active {
     display: block;
   }
   img {
-    max-width: 100%;
+    max-width: 60%;
     height: auto;
     border-radius: 10px;
+    margin-bottom: 20px;
   }
   audio {
-    width: 100%;
-    margin-top: 20px;
+    width: 60%;
+    margin: auto;
   }
 </style>
 </head>
 <body>
 
 <div class="container">
-  <div id="image1" class="image-container active"><img src="image1.jpg" alt="صورة 1"></div>
-  <div id="image2" class="image-container"><img src="OIG4.jpeg" alt="صورة 2"></div>
+  <div id="image1" class="image-container active"><img src="OIG4.jpeg" alt="صورة 1"></div>
+  <div id="image2" class="image-container"><img src="image2.jpg" alt="صورة 2"></div>
   <div id="image3" class="image-container"><img src="image3.jpg" alt="صورة 3"></div>
   <div id="image4" class="image-container"><img src="image4.jpg" alt="صورة 4"></div>
   <div id="image5" class="image-container"><img src="image5.jpg" alt="صورة 5"></div>
@@ -60,4 +61,5 @@
 
 </body>
 </html>
+
 
