@@ -1,58 +1,70 @@
 <!DOCTYPE html>
 <html lang="ar">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>تيم كميين ورصاصة المتوتر</title>
-<style>
-  body {
-    text-align: center;
-    font-family: 'Arial', sans-serif;
-    background-color: #E5E8E8;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 100vh;
-  }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>تيم كميين ورصاصة المتوتر</title>
+  <style>
+    body {
+      text-align: center;
+      font-family: 'Arial', sans-serif;
+      background-color: #E5E8E8;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 100vh;
+    }
 
-  .header {
-    position: absolute;
-    top: 10px; /* يمكنك تغيير هذا لتحديد المسافة من الأعلى */
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: rgba(255, 69, 0, 0.5); /* لون الخلفية الشفاف */
-    padding: 10px 20px;
-    border-radius: 10px;
-    z-index: 10;
-  }
+    .header {
+      position: absolute;
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: rgba(255, 69, 0, 0.5);
+      padding: 10px 20px;
+      border-radius: 10px;
+      z-index: 10;
+    }
 
-  .image-container {
-    display: none;
-    margin: auto;
-  }
+    .image-container {
+      display: none;
+      margin: auto;
+    }
 
-  .image-container.active {
-    display: block;
-  }
+    .image-container.active {
+      display: block;
+    }
 
-  img {
-    max-width: 90%;
-    height: auto;
-    border-radius: 20px;
-    margin-bottom: 30px;
-  }
+    img {
+      max-width: 90%;
+      height: auto;
+      border-radius: 20px;
+      margin-bottom: 30px;
+    }
 
-  audio {
-    width: 80%;
-    margin: auto;
-  }
-</style>
+    audio {
+      width: 80%;
+      margin: auto;
+    }
+
+    /* Custom music player styles */
+    audio::-webkit-media-controls-panel {
+      background-color: rgba(255, 69, 0, 0.8);
+      border-radius: 10px;
+    }
+
+    audio::-webkit-media-controls-play-button,
+    audio::-webkit-media-controls-pause-button {
+      background-color: #fff;
+      border-radius: 50%;
+    }
+  </style>
 </head>
 <body>
-
-<div class="container">
+  <div class="container">
+    <div class="container">
   <div class="header">كمين ام 4 & كمين 992 & رصاصه</div> 
 
   <div id="image1" class="image-container active"><img src="iraq1.jpg" alt="صورة 1"></div>
@@ -66,21 +78,27 @@
   <div id="image9" class="image-container"><img src="abd.jpg" alt="صورة 9"></div>
   <div id="image10" class="image-container"><img src="ahmd.jpg" alt="صورة 10"></div>
   <div id="image11" class="image-container"><img src="ali.jpg" alt="صورة 11"></div>
-  
-  <audio controls autoplay>
-    <source src="pupge.mp3" type="audio/mpeg">
-    متصفحك لا يدعم عنصر الصوت.
-  </audio>
-</div>
 
-<script>
-  let currentImage = 1;
-  document.body.addEventListener('click', function() {
-    document.getElementById('image' + currentImage).classList.remove('active');
-    currentImage = currentImage >= 11 ? 1 : currentImage + 1;
-    document.getElementById('image' + currentImage).classList.add('active');
-  });
-</script>
+    <audio controls autoplay>
+      <source src="pupge.mp3" type="audio/mpeg">
+      متصفحك لا يدعم عنصر الصوت.
+    </audio>
+  </div>
 
+  <script>
+    let currentImage = 1;
+    document.body.addEventListener('click', function() {
+      document.getElementById('image' + currentImage).classList.remove('active');
+      currentImage = currentImage >= 11 ? 1 : currentImage + 1;
+      document.getElementById('image' + currentImage).classList.add('active');
+    });
+
+    // Autoplay audio
+    document.addEventListener('DOMContentLoaded', function() {
+      const audioElement = document.querySelector('audio');
+      audioElement.play();
+    });
+  </script>
 </body>
 </html>
+
