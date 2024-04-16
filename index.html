@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title> تيم كميين ورصاصة المتوتر   </title>
+<title>تيم كميين ورصاصة المتوتر</title>
 <style>
   body {
     text-align: center;
@@ -15,32 +15,35 @@
     flex-direction: column;
     justify-content: center;
     height: 100vh;
+  }
 
   .header {
-  position: absolute;
-  top: 10px; /* يمكنك تغيير هذا لتحديد المسافة من الأعلى */
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: rgba(255, 69, 0, 0.5); /* لون الخلفية الشفاف */
-  padding: 10px 20px;
-  border-radius: 10px;
-  z-index: 10;
-}
-
+    position: absolute;
+    top: 10px; /* يمكنك تغيير هذا لتحديد المسافة من الأعلى */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(255, 69, 0, 0.5); /* لون الخلفية الشفاف */
+    padding: 10px 20px;
+    border-radius: 10px;
+    z-index: 10;
   }
+
   .image-container {
     display: none;
     margin: auto;
   }
+
   .image-container.active {
     display: block;
   }
+
   img {
-    max-width:90%;
+    max-width: 90%;
     height: auto;
-    border-radius:20px;
+    border-radius: 20px;
     margin-bottom: 30px;
   }
+
   audio {
     width: 80%;
     margin: auto;
@@ -50,20 +53,19 @@
 <body>
 
 <div class="container">
-  <div class="header">كمين ام 4 & كمين 992 & رصاصه  </div> 
+  <div class="header">كمين ام 4 & كمين 992 & رصاصه</div> 
 
-
-  <div id="image1" class="image-container"><img src="iraq1.jpg" alt="صورة 1"></div>
+  <div id="image1" class="image-container active"><img src="iraq1.jpg" alt="صورة 1"></div>
   <div id="image2" class="image-container"><img src="iraq2.jpg" alt="صورة 2"></div>
   <div id="image3" class="image-container"><img src="iraq3.jpg" alt="صورة 3"></div>
   <div id="image4" class="image-container"><img src="iraq4.jpg" alt="صورة 4"></div>
   <div id="image5" class="image-container"><img src="iraq5.jpg" alt="صورة 5"></div>
   <div id="image6" class="image-container"><img src="iraq6.jpg" alt="صورة 6"></div>
-  <div id="image8" class="image-container"><img src="abd.jpg" alt="صورة 7"></div>
-  <div id="image9" class="image-container"><img src="ahmd.jpg" alt="صورة 8"></div>
-  <div id="image10" class="image-container"><img src="ali.jpg" alt="صورة 9"></div>
-  <div id="image11" class="image-container"><img src="hemd.jpg" alt="صورة 10"></div>
-  <div id="image12" class="image-container"><img src="iraq8.jpg" alt="صورة 11"></div>
+  <div id="image7" class="image-container"><img src="iraq7.jpg" alt="صورة 7"></div>
+  <div id="image8" class="image-container"><img src="iraq8.jpg" alt="صورة 8"></div>
+  <div id="image9" class="image-container"><img src="iraq9.jpg" alt="صورة 9"></div>
+  <div id="image10" class="image-container"><img src="iraq10.jpg" alt="صورة 10"></div>
+  <div id="image11" class="image-container"><img src="iraq11.jpg" alt="صورة 11"></div>
   
   <audio controls autoplay>
     <source src="pupge.mp3" type="audio/mpeg">
@@ -75,7 +77,7 @@
   let currentImage = 1;
   document.body.addEventListener('click', function() {
     document.getElementById('image' + currentImage).classList.remove('active');
-    currentImage = currentImage >= 12 ? 1 : currentImage + 1;
+    currentImage = currentImage >= 11 ? 1 : currentImage + 1;
     document.getElementById('image' + currentImage).classList.add('active');
   });
 </script>
